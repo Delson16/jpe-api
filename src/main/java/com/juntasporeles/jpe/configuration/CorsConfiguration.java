@@ -19,7 +19,8 @@ public class CorsConfiguration {
     @Bean
     public WebMvcConfigurer webMvcConfigurer (){
         return new WebMvcConfigurer(){
-            public void addCorsMapping(CorsRegistry registry){
+            @Override
+            public void addCorsMappings(CorsRegistry registry){
                 registry.addMapping("/**")
                         .allowedOrigins(allowedOrigins)
                         .allowedMethods(allowedMethods.split(","))
